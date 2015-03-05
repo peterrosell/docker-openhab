@@ -2,18 +2,12 @@
 # Openhab 1.6.1
 # * configuration is injected
 #
-FROM ubuntu:14.04
-MAINTAINER Tom Deckers <tom@ducbase.com>
+FROM hypriot/rpi-java:jre-1.7.0
+MAINTAINER Simon Cheung <cheung.sai.ho@gmail.com>
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install unzip supervisor wget
-
-# Download and install Oracle JDK
-# For direct download see: http://stackoverflow.com/questions/10268583/how-to-automate-download-and-installation-of-java-jdk-on-linux
-RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O /tmp/jdk-7u67-linux-x64.tar.gz http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
-RUN tar -zxC /opt -f /tmp/jdk-7u67-linux-x64.tar.gz
-RUN ln -s /opt/jdk1.7.0_67 /opt/jdk7
 
 # Download Openhab 1.6.1
 ADD https://github.com/openhab/openhab/releases/download/v1.6.1/distribution-1.6.1-runtime.zip /tmp/distribution-1.6.1-runtime.zip

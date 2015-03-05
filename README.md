@@ -3,6 +3,10 @@ Overview
 
 Docker image for Openhab (1.6.1).
 
+Forked from tdeckers/docker-openhab
+
+Updated to use hypriot/rpi-java as the base image for the raspberry pi.
+
 Building
 ========
 
