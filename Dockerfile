@@ -8,7 +8,7 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install unzip supervisor wget
 
-ENV OPENHAB_VERSION 1.6.2
+ENV OPENHAB_VERSION 1.7.1
 
 ADD files /root/docker-files/
 
