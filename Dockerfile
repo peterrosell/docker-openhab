@@ -1,11 +1,11 @@
 # Openhab 1.6.2
 # * configuration is injected
 #
-FROM hypriot/rpi-java:jre-1.7.0
+FROM hypriot/rpi-java:1.8.0
 MAINTAINER Simon Cheung <cheung.sai.ho@gmail.com>
 
 RUN apt-get -y update
-RUN apt-get -y upgrade
+RUN apt-get -y dist-upgrade
 RUN apt-get -y install unzip supervisor wget
 
 ENV OPENHAB_VERSION 1.7.1
