@@ -12,7 +12,7 @@ else
 #  wget --quiet --no-check-certificate --no-cookies -O /tmp/demo-openhab.zip https://bintray.com/artifact/download/openhab/bin/distribution-$OPENHAB_VERSION-demo-configuration.zip
 fi
 
-wget --quiet --no-check-certificate --no-cookies -O /tmp/org.openhab.io.myopenhab-1.4.0-SNAPSHOT.jar https://bintray.com/artifact/download/openhab/mvn/org/openhab/io/org.openhab.io.myopenhab/1.7.0/org.openhab.io.myopenhab-1.7.0.jar
+wget --quiet --no-check-certificate --no-cookies -O /tmp/org.openhab.io.myopenhab-1.7.0.jar https://bintray.com/artifact/download/openhab/mvn/org/openhab/io/org.openhab.io.myopenhab/1.7.0/org.openhab.io.myopenhab-1.7.0.jar
 wget --quiet --no-check-certificate --no-cookies -O /tmp/hyperic-sigar-1.6.4.tar.gz http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.4.tar.gz
 
 rm -rf /opt/openhab
