@@ -1,9 +1,9 @@
 Overview
 ========
 
-Raspberry PI specifc Docker image for Openhab (1.6.2).
+Raspberry PI specifc Docker image for Openhab (1.7.1) running on Java 1.8.
 
-Forked from tdeckers/docker-openhab
+Forked from craigham/docker-openhab
 
 Updated to use hypriot/rpi-java as the base image for the raspberry pi.
 
@@ -14,7 +14,7 @@ If you do not have a openHAB configuration yet, you can start this Docker withou
 
 PULL
 =======
-```docker pull sshcheung/rpi-openhab```
+```docker pull peterrosell/rpi-openhab```
 
 Building
 ========
@@ -57,12 +57,17 @@ Europe/Brussels
 ```
 
 Example run command (with your openHAB config)
-```docker -d -p 8080:8080 -v /tmp/configuration:/etc/openhab/ sshcheung/rpi-openhab```
+```docker -d -p 80:8080 -v /tmp/configuration:/etc/openhab/ peterrosell/rpi-openhab```
 
-Example run command (with Demo)
-```docker -d -p 8080:8080 sshcheung/rpi-openhab```
+Example run command with habmin and USB device (I use RFXCOM)
+```docker run -d --name openhab -p 80:8080 -p 443:8443 -p 9001:9001 --device=/dev/ttyUSB0:/dev/ttyUSB0 -v /openhab/webapps/habmin:/opt/openhab/webapps/habmin -v /openhab/config:/etc/openhab -v /openhab/addons:/opt/openhab/addons-available/habmin peterrosell/docker-openhab-rpi```
 
-Start the Demo with: ```http://[IP-of-Docker-Host]:8080/openhab.app?sitemap=demo```
+
+View openhab GUI with: ```http://[IP-of-Docker-Host]/openhab.app```
+
+View habmin GUI with: ```http://[IP-of-Docker-Host]/habmin```
+
+View supervisor GUI with: ```http://[IP-of-Docker-Host]:9001/```. The log is found here.
 
 
 Contributors
@@ -71,3 +76,4 @@ Contributors
 * scottt732
 * TimWeyand
 * tdeckers
+* peterrosell
